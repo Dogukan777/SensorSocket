@@ -12,7 +12,7 @@ wss.on('connection', (ws) => {
 
     // send a message to all connected clients upon receiving a message from one of the connected clients
     ws.on('message', (data) => {
-        console.log(`received: ${data}`);
+        console.log(`sensor: ${data}`);
         serverBroadcast(`${data}`);
     });
 
@@ -22,8 +22,7 @@ wss.on('connection', (ws) => {
         clients.delete(ws);
     });
 
-    // send the id back to the newly connected client
-    ws.send(`You have been assigned id ${id}`);
+
 });
 
 // send a message to all the connected clients about how many of them there are every 15 seconds
