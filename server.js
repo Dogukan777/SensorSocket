@@ -26,10 +26,6 @@ wss.on('connection', (ws) => {
 });
 
 // send a message to all the connected clients about how many of them there are every 15 seconds
-setInterval(() => {
-    console.log(`Number of connected clients: ${clients.size}`);
-    serverBroadcast(`Number of connected clients: ${clients.size}`);
-}, 15000);
 
 // function for sending a message to every connected client
 function serverBroadcast(message) {
